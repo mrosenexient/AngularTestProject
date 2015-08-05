@@ -12,6 +12,7 @@ namespace AngularTestProject
 
             bundles.Add(new ScriptBundle("~/bundles/AngularTestProject")
                     .IncludeDirectory("~/Scripts/Controllers", "*.js")
+                    .IncludeDirectory("~/Scripts/Factories", "*.js")
                     .Include("~/Scripts/AngularTestProject.js"));
 
             BundleTable.EnableOptimizations = true;
