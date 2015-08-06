@@ -9,7 +9,15 @@ AngularTestProject.factory('AuthHttpResponseInterceptor', AuthHttpResponseInterc
 AngularTestProject.factory('LoginFactory', LoginFactory);
 AngularTestProject.factory('RegistrationFactory', RegistrationFactory);
 
-var configFunction = function ($routeProvider, $httpProvider) {
+var configFunction = function ($routeProvider, $httpProvider, $locationProvider) {
+
+    $locationProvider.hashPrefix('!').html5Mode(true);
+
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+
     $routeProvider.
         when('/routeOne', {
             templateUrl: 'routesDemo/one'
@@ -31,6 +39,5 @@ var configFunction = function ($routeProvider, $httpProvider) {
 
     $httpProvider.interceptors.push('AuthHttpResponseInterceptor');
 }
-configFunction.$inject = ['$routeProvider', '$httpProvider'];
-
+configFunction.$inject = ['$routeProvider', '$httpProvider', '$locationProvider'];
 AngularTestProject.config(configFunction);
