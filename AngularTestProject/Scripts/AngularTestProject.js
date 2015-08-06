@@ -1,4 +1,5 @@
-﻿var AngularTestProject = angular.module('AngularTestProject', ['ngRoute']);
+﻿var AngularTestProject = angular.module('AngularTestProject', ['ngRoute', 'ui.bootstrap']);
+
 
 AngularTestProject.controller('LandingPageController', LandingPageController);
 AngularTestProject.controller('LoginController', LoginController);
